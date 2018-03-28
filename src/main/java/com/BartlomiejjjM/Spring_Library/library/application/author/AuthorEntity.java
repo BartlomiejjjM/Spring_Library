@@ -1,7 +1,10 @@
 package com.BartlomiejjjM.Spring_Library.library.application.author;
 
+import com.BartlomiejjjM.Spring_Library.library.application.book.BookEntity;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(name = "author", catalog = "postgresql")
@@ -14,6 +17,9 @@ public class AuthorEntity {
     private String name;
     @NotNull
     private String surname;
+
+    @ManyToMany
+    private List<BookEntity> books;
 
     public AuthorEntity(){
 
@@ -43,4 +49,11 @@ public class AuthorEntity {
         this.surname = surname;
     }
 
+    public List<BookEntity> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<BookEntity> books) {
+        this.books = books;
+    }
 }

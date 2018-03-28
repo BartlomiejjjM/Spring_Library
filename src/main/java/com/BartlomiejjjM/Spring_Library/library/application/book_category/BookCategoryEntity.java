@@ -1,12 +1,14 @@
 package com.BartlomiejjjM.Spring_Library.library.application.book_category;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "bookcategory", catalog = "postgresql")
 public class BookCategoryEntity {
+    @Id
     @Size(min=4, max=4)
     private int categoryCode;
     private String name;
