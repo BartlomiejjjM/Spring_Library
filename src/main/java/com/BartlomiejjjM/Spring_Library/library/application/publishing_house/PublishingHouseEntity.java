@@ -13,7 +13,7 @@ public class PublishingHouseEntity {
     private Long id;
 
     private String name;
-    @OneToMany
+    @OneToMany(mappedBy = "publishingHouseEntity")
     private List<BookEntity> books;
 
     public  PublishingHouseEntity(){

@@ -1,5 +1,7 @@
 package com.BartlomiejjjM.Spring_Library.library.application.book_category;
 
+import com.BartlomiejjjM.Spring_Library.library.application.book.BookEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,19 +12,23 @@ import javax.validation.constraints.Size;
 public class BookCategoryEntity {
     @Id
     @Size(min=4, max=4)
-    private int categoryCode;
+    private Long categoryCode;
     private String name;
 
-    public BookCategoryEntity(@Size(min = 4, max = 4) int categoryCode, String name) {
+    public BookCategoryEntity(){
+
+    }
+
+    public BookCategoryEntity(@Size(min = 4, max = 4) Long categoryCode, String name) {
         this.categoryCode = categoryCode;
         this.name = name;
     }
 
-    public int getCategoryCode() {
+    public Long getCategoryCode() {
         return categoryCode;
     }
 
-    public void setCategoryCode(int categoryCode) {
+    public void setCategoryCode(Long categoryCode) {
         this.categoryCode = categoryCode;
     }
 

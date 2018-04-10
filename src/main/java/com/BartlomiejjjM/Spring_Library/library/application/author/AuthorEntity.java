@@ -4,6 +4,7 @@ import com.BartlomiejjjM.Spring_Library.library.application.book.BookEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import java.util.List;
 
 @Entity
@@ -14,7 +15,7 @@ public class AuthorEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    private String name;
+    private String author_name;
     @NotNull
     private String surname;
 
@@ -25,20 +26,26 @@ public class AuthorEntity {
 
     }
     public AuthorEntity(@NotNull String name, @NotNull String surname) {
-        this.name = name;
+        this.author_name = name;
         this.surname = surname;
     }
+    public AuthorEntity(Long id, @NotNull String name, @NotNull String surname){
+        this.id=id;
+        this.author_name = name;
+        this.surname = surname;
+    }
+
 
     public Long getId() {
         return id;
     }
 
     public String getName() {
-        return name;
+        return author_name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.author_name = name;
     }
 
     public String getSurname() {
